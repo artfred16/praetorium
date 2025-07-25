@@ -1,8 +1,8 @@
 import express from 'express';
 import cors from 'cors';
-import {connectDB} from './config/database.config.js';
-import config from './config/config.js';
-import apiRoutes from './routes/base-api.route.js';
+import {connectDB} from './config/database.config';
+import config from './config/config';
+import apiRoutes from './routes/base-api.route';
 
 const app = express();
 

@@ -1,6 +1,6 @@
 import express from 'express';
-import tag from "./tag.route.js";
-import category from "./category.route.js";
+import tag from "./tag.route";
+import category from "./category.route";
 
 
 const router = express.Router();

@@ -1,6 +1,7 @@
-import Category from "../models/category.model.js";
+import Category from "../models/category.model";
+import {Request, Response} from "express";
 
-export async function getCategories(_, res) {
+export async function getCategories(_: Request, res: Response) {
   try {
     const categories = await Category.find()
 

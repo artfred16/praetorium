@@ -1,8 +1,9 @@
-import Tag from "../models/tag.model.js";
+import Tag from "../models/tag.model";
 import mongoose from "mongoose";
+import {Request, Response} from "express";
 
 
-export async function getTags(_, res) {
+export async function getTags(_: Request , res: Response) {
   try {
     const tags = await Tag.find();
     res.json(tags);
@@ -14,8 +15,8 @@ export async function getTags(_, res) {
 
 
 export async function getTagById(
-    { params: { id } },
-    res: any
+    { params: { id } } : Request,
+    res: Response
 ) {
   try {
     if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -34,7 +35,10 @@ export async function getTagById(
 }
 
 
-export function createTag({ body: { name, description }}, res) {
+export function createTag(
+    { body: { name, description }}: Request,
+    res: Response
+) {
   try {
     const newTag = new Tag({ name, description});
     newTag.save();
@@ -47,8 +51,8 @@ export function createTag({ body: { name, description }}, res) {
 
 
 export async function updateTag(
-    { params: { id }, body: { name, description }},
-    res
+    { params: { id }, body: { name, description }}: Request,
+    res: Response
 ) {
   try {
     const updatedTag = await Tag.findByIdAndUpdate(id, { name, description });
@@ -64,8 +68,8 @@ export async function updateTag(
 
 
 export async function deleteTag(
-    { params: { id }},
-    res
+    { params: { id }}: Request,
+    res: Response
 ) {
   try {
     const deletedTag = await Tag.findByIdAndDelete(id);
