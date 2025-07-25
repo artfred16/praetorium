@@ -1,4 +1,4 @@
-import Tag from "../models/tag.model.ts";
+import Tag from "../models/tag.model.js";
 import mongoose from "mongoose";
 
 

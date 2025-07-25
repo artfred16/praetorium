@@ -5,7 +5,7 @@ import {
   getTagById,
   getTags,
   updateTag
-} from "../controllers/tag.controller.ts";
+} from "../controllers/tag.controller.js";
 
 const router = express.Router();
 

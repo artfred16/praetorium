@@ -1,4 +1,4 @@
-import Category from "../models/category.model.ts";
+import Category from "../models/category.model.js";
 
 export async function getCategories(_, res) {
   try {
