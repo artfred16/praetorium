@@ -11,12 +11,14 @@ connectDB();
 app.use(cors())
 app.use(express.json());
 
+
+app.use('/api', apiRoutes);
 app.use('/', (req, res) => {
   res.send('Welcome to Praetorium API');
 });
-
-app.use('/api', apiRoutes);
-
 app.listen(config.port, () => {
-  console.log(`Server is running on port ${process.env.PORT || 5000}`);
+  console.log(`Server is running on port ${config.port}`);
 });
+
+
+export default app;
