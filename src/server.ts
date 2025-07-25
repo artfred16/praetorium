@@ -6,7 +6,7 @@ import apiRoutes from './routes/base-api.route';
 
 const app = express();
 
-connectDB();
+await connectDB();
 
 app.use(cors())
 app.use(express.json());
