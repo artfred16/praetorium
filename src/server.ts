@@ -11,6 +11,10 @@ connectDB();
 app.use(cors())
 app.use(express.json());
 
+app.use('/', (req, res) => {
+  res.send('Welcome to Praetorium API');
+});
+
 app.use('/api', apiRoutes);
 
 app.listen(config.port, () => {
